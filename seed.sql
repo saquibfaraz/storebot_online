@@ -1,12 +1,12 @@
 CREATE DATABASE sainsburys_kingsmead;
 USE sainsburys_kingsmead;
 
-CREATE TABLE aisl (
+CREATE TABLE aisles (
   aisle_id INT PRIMARY KEY,
   aisle_name VARCHAR(150) NOT NULL
 );
 
-CREATE TABLE prod (
+CREATE TABLE products (
   product_id INT PRIMARY KEY AUTO_INCREMENT,
   product_name VARCHAR(255) NOT NULL,
   aisle_id INT NOT NULL,
