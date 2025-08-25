@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: storebot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:8000
+    plan: free
+    region: frankfurt  # or london if available
+    envVars:
+      - key: DB_PATH
+        value: /data/storebot.db
+    disks:
+      - name: storebot-data
+        mountPath: /data
+        sizeGB: 1
